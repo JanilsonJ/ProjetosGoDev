@@ -1,0 +1,123 @@
+:root {
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+}
+
+/* Body */
+body {
+    background-color: #16161a;
+    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.texto {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    color: #fcfcfc;
+}
+
+/* Calculadora */
+
+.calculadora {
+    margin-bottom: 15px;
+}
+
+.grid-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 4px 4px;
+
+    height: 640px;
+    width: 420px;
+
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+
+    background-color: #474747;
+    background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
+    
+    border: 6px solid #695e5e;
+    border-style: outset;
+    box-shadow: 5px 10px 10px 1px #363e47;
+    padding: 2vh;
+    border-radius: 20px;
+}
+
+.grid-container > button {
+    cursor: pointer;
+
+    font-size: 1.7rem;
+    
+    background-color: #232323;
+    color: #fcfcfc;
+
+    border-radius: 20px;
+
+    border: 4px solid #695e5e;
+    border-style: outset;
+}
+
+.grid-container > button:hover {
+    font-size: 1.6rem;
+
+    text-shadow: 4px 4px 4px #a9a5a3;
+    border-style: inset;
+}
+
+.grid-container > .clear {
+    background-color: #999696;
+}
+
+.grid-container > .delete {
+    background-color: #652c2c;
+}
+
+.grid-container > .operator {
+    background-color: #ba6f13;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.grid-container > .output {
+    grid-column: 1 / -1;
+
+    background-color: #c2c2c2;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    
+    padding-right: 15px;
+    margin-bottom: 1vh;
+
+    border: 8px solid #695e5e;
+    border-style: inset;
+
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.grid-container > .output > .previous-operand {
+    color: #828286;
+    font-size: 1.5rem;
+}
+
+.grid-container > .output > .current-operand {
+    color: #16161a;
+    font-size: 1.5rem;
+}
+

@@ -1,0 +1,113 @@
+.corpo {
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    
+    width: 100%;
+    height: 100vh;
+    
+    background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+    background-color: #494949;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Titulo */
+.titulo {
+    font-size: 2em;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    text-shadow: 1px 1px 4px #fcfcfc;
+}
+
+/* Sobre */
+.sobre {
+    width: 85%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre > p {
+    font-size: 1.6em;
+    margin: 20px;
+
+    text-align: center;
+}
+
+.meus__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.meus__links > p {
+    font-size: 1.5em;
+}
+
+.meus__links > a {
+    padding-left: 30px;
+    box-sizing: border-box;
+
+    font-size: 1.5em;
+}
+
+.meus__links > a:hover {
+    font-size: 1.8em;
+    color: #fcfcfc;
+}
+
+/* Projetos */
+
+.projetos {
+    width: 70%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+
+    font-size: 2em;
+}
+
+.projeto {
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.projeto:hover{
+    cursor: pointer;
+
+    text-shadow: 1px 1px 4px #fcfcfc;
+
+    background-color: #fcfcfc39;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px #fcfcfc;
+}
+
+.projeto > p {
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.projeto > img{
+    height: 300px;
+
+    border-radius: 15px;
+    border: 5px solid #cc6d1a;
+    border-style: outset;
+    box-shadow: 5px 5px 10px #fcfcfc;
+}
+   
+    

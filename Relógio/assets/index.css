@@ -1,0 +1,458 @@
+/* Body */
+body {
+
+    font-family: 'Chakra Petch', sans-serif;
+
+    background-color: #1f1500;
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Relógio */
+
+.clocks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.relogio {
+    padding: 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.localizacao {
+    color: #fcfcfc;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+
+    /*background-color: rgba(255, 255, 255, .8);*/
+    background-color: #ebe8e8;
+    background-image: url("https://www.transparenttextures.com/patterns/smooth-wall-dark.png");
+    color: #000000;
+
+    border-radius: 40%;
+    border: 6px #7a7979;
+    border-style: outset;
+    position: relative;
+    box-shadow: 10px 5px 25px 0px #000000;
+}
+
+.clock .number {
+    --rotation: 0;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-shadow: 0px 0px 10px #ffffff;
+
+    padding: 22px;
+    box-sizing: border-box;
+}
+
+.clock .number.number-1{
+    --rotation: 30deg;
+}
+.rotacao-1{transform: rotate(-30deg);}
+
+.clock .number.number-2{
+    --rotation: 60deg;
+}
+.rotacao-2{transform: rotate(-60deg);}
+
+.clock .number.number-3{
+    --rotation: 90deg;
+}
+.rotacao-3{transform: rotate(-90deg);}
+
+.clock .number.number-4{
+    --rotation: 120deg;
+}
+.rotacao-4{transform: rotate(-120deg);}
+
+.clock .number.number-5{
+    --rotation: 150deg;
+}
+.rotacao-5{transform: rotate(-150deg);}
+
+.clock .number.number-6{
+    --rotation: 180deg;
+}
+.rotacao-6{transform: rotate(-180deg);}
+
+.clock .number.number-7{
+    --rotation: 210deg;
+}
+.rotacao-7{transform: rotate(-210deg);}
+
+.clock .number.number-8{
+    --rotation: 240deg;
+}
+.rotacao-8{transform: rotate(-240deg);}
+
+.clock .number.number-9{
+    --rotation: 270deg;
+}
+.rotacao-9{transform: rotate(-270deg);}
+
+.clock .number.number-10{
+    --rotation: 300deg;
+}
+.rotacao-10{transform: rotate(-300deg);}
+
+.clock .number.number-11{
+    --rotation: 330deg;
+}
+.rotacao-11{transform: rotate(-330deg);}
+
+/* Ponteiros */
+
+.clock::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+
+    z-index: 11;
+    background-color: #ffd700;
+    transform: translate(-50%, -50%);
+}
+
+.clock .hand {
+    --rotation: 0;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 40%;
+
+    background-color: #000000;
+    box-shadow: 5px 5px 25px 0px #000000;
+
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+    border-radius: 25%;
+}
+
+.clock .hand.seconds{
+    width: 3px;
+    height: 40%;
+    background-color: #ff0000;
+}
+
+.clock .hand.minutes{
+    width: 7px;
+    height: 35%;
+    background-color: #000000;
+}
+
+.clock .hand.hour{
+    width: 10px;
+    height: 25%;
+    background-color: #000000;
+}
+
+/* Marcadores */
+
+.clock .marcadores {
+    --rotation: 0;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.clock .marcadores.marcadores-1{
+    --rotation: 6deg;
+}
+
+.clock .marcadores.marcadores-2{
+    --rotation: 12deg;
+}
+
+.clock .marcadores.marcadores-3{
+    --rotation: 18deg;
+}
+
+.clock .marcadores.marcadores-4{
+    --rotation: 24deg;
+}
+
+.clock .marcadores.marcadores-5{
+    --rotation: 30deg;
+}
+
+.clock .marcadores.marcadores-6{
+    --rotation: 36deg;
+}
+
+.clock .marcadores.marcadores-7{
+    --rotation: 42deg;
+}
+
+.clock .marcadores.marcadores-8{
+    --rotation: 48deg;
+}
+
+.clock .marcadores.marcadores-9{
+    --rotation: 54deg;
+}
+
+.clock .marcadores.marcadores-10{
+    --rotation: 60deg;
+}
+
+.clock .marcadores.marcadores-11{
+    --rotation: 66deg;
+}
+
+.clock .marcadores.marcadores-12{
+    --rotation: 72deg;
+}
+
+.clock .marcadores.marcadores-13{
+    --rotation: 78deg;
+}
+
+.clock .marcadores.marcadores-14{
+    --rotation: 84deg;
+}
+
+.clock .marcadores.marcadores-15{
+    --rotation: 90deg;
+}
+
+.clock .marcadores.marcadores-16{
+    --rotation: 96deg;
+}
+
+.clock .marcadores.marcadores-17{
+    --rotation: 102deg;
+}
+
+.clock .marcadores.marcadores-18{
+    --rotation: 108deg;
+}
+
+.clock .marcadores.marcadores-19{
+    --rotation: 114deg;
+}
+
+.clock .marcadores.marcadores-20{
+    --rotation: 120deg;
+}
+
+.clock .marcadores.marcadores-21{
+    --rotation: 126deg;
+}
+
+.clock .marcadores.marcadores-22{
+    --rotation: 132deg;
+}
+
+.clock .marcadores.marcadores-23{
+    --rotation: 138deg;
+}
+
+.clock .marcadores.marcadores-24{
+    --rotation: 144deg;
+}
+
+.clock .marcadores.marcadores-25{
+    --rotation: 150deg;
+}
+
+.clock .marcadores.marcadores-26{
+    --rotation: 156deg;
+}
+
+.clock .marcadores.marcadores-27{
+    --rotation: 162deg;
+}
+
+.clock .marcadores.marcadores-28{
+    --rotation: 168deg;
+}
+
+.clock .marcadores.marcadores-29{
+    --rotation: 174deg;
+}
+
+.clock .marcadores.marcadores-30{
+    --rotation: 180deg;
+}
+
+.clock .marcadores.marcadores-31{
+    --rotation: 186deg;
+}
+
+.clock .marcadores.marcadores-32{
+    --rotation: 192deg;
+}
+
+.clock .marcadores.marcadores-33{
+    --rotation: 198deg;
+}
+
+.clock .marcadores.marcadores-34{
+    --rotation: 204deg;
+}
+
+.clock .marcadores.marcadores-35{
+    --rotation: 210deg;
+}
+
+.clock .marcadores.marcadores-36{
+    --rotation: 216deg;
+}
+
+.clock .marcadores.marcadores-37{
+    --rotation: 222deg;
+}
+
+.clock .marcadores.marcadores-38{
+    --rotation: 228deg;
+}
+
+.clock .marcadores.marcadores-39{
+    --rotation: 234deg;
+}
+
+.clock .marcadores.marcadores-40{
+    --rotation: 240deg;
+}
+
+.clock .marcadores.marcadores-41{
+    --rotation: 246deg;
+}
+
+.clock .marcadores.marcadores-42{
+    --rotation: 252deg;
+}
+
+.clock .marcadores.marcadores-43{
+    --rotation: 258deg;
+}
+
+.clock .marcadores.marcadores-44{
+    --rotation: 264deg;
+}
+
+.clock .marcadores.marcadores-45{
+    --rotation: 270deg;
+}
+
+.clock .marcadores.marcadores-46{
+    --rotation: 276deg;
+}
+
+.clock .marcadores.marcadores-47{
+    --rotation: 282deg;
+}
+
+.clock .marcadores.marcadores-48{
+    --rotation: 288deg;
+}
+
+.clock .marcadores.marcadores-49{
+    --rotation: 294deg;
+}
+
+.clock .marcadores.marcadores-50{
+    --rotation: 300deg;
+}
+
+.clock .marcadores.marcadores-51{
+    --rotation: 306deg;
+}
+
+.clock .marcadores.marcadores-52{
+    --rotation: 312deg;
+}
+
+.clock .marcadores.marcadores-53{
+    --rotation: 318deg;
+}
+
+.clock .marcadores.marcadores-54{
+    --rotation: 324deg;
+}
+
+.clock .marcadores.marcadores-55{
+    --rotation: 330deg;
+}
+
+.clock .marcadores.marcadores-56{
+    --rotation: 336deg;
+}
+
+.clock .marcadores.marcadores-57{
+    --rotation: 342deg;
+}
+
+.clock .marcadores.marcadores-58{
+    --rotation: 348deg;
+}
+
+.clock .marcadores.marcadores-59{
+    --rotation: 354deg;
+}
+
+.clock .marcadores.marcadores-60{
+    --rotation: 360deg;
+}
+
+/* Relógio Digital */
+
+.digitalClock {
+    font-family: 'Zen Dots', cursive;
+    
+    margin-top: 10px;
+    width: 50%;
+    
+    background-color: #0f0b0e;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    color: #bf1212;
+    text-shadow: 0px 0px 10px #bf1212;
+
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 5px;
+    box-sizing: border-box;
+}
