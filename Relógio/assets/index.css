@@ -1,6 +1,5 @@
 /* Body */
 body {
-
     font-family: 'Chakra Petch', sans-serif;
 
     background-color: #1f1500;
@@ -14,25 +13,22 @@ body {
 /* Relógio */
 
 .clocks {
+    width: 85%;
+
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
+
+    margin: 40px;
 }
 
 .relogio {
-    padding: 30px;
-    box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-}
 
-.localizacao {
-    color: #fcfcfc;
-    font-size: 1.2rem;
-    text-align: center;
-    padding-bottom: 10px;
+    
+    margin: 20px;
 }
 
 .clock {
@@ -49,6 +45,25 @@ body {
     border-style: outset;
     position: relative;
     box-shadow: 10px 5px 25px 0px #000000;
+}
+
+.localizacao {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    color: #353535;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.localizacao > h2 {
+    margin-top: 70px;
 }
 
 .clock .number {

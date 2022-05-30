@@ -40,9 +40,10 @@ function newClock(local){
     $(document).ready(function() {
         $('.clocks').append(`
         <div class="relogio">
-            <h2 class="localizacao">Horário de ${local}</h2>
-            
             <div class="clock">
+                <div class="localizacao">
+                    <h2>${local}</h2>
+                </div>
                 <div class="hand seconds ${normalizeString(local)}"></div>
                 <div class="hand minutes ${normalizeString(local)}"></div>
                 <div class="hand hour ${normalizeString(local)}"></div>
@@ -50,7 +51,6 @@ function newClock(local){
                 ${clockNums()}
     
                 ${clockMarks()}
-
             </div>
             
             <div class="digitalClock">
