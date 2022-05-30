@@ -36,32 +36,34 @@ function normalizeString(str){
 const locais = new Array();;
 function newClock(local){
     locais.push(local);
+    const normalizeLocale = normalizeString(local)
 
     $(document).ready(function() {
         $('.clocks').append(`
-        <div class="relogio">
-            <div class="clock">
-                <div class="localizacao">
-                    <h2>${local}</h2>
+            <div class="relogio">
+                <div class="clock">
+                    <div class="insideClock">
+                        <h2>${local}</h2>
+                        <div class="digitalClock">
+                            <span id="hours${normalizeLocale}">00</span>
+                            <span>:</span>
+                            <span id="minutes${normalizeLocale}">00</span>
+                            <span>:</span>
+                            <span id="seconds${normalizeLocale}">00</span>
+                            <span id="session${normalizeLocale}">AM</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="hand seconds ${normalizeLocale}"></div>
+                    <div class="hand minutes ${normalizeLocale}"></div>
+                    <div class="hand hour ${normalizeLocale}"></div>
+        
+                    ${clockNums()}
+        
+                    ${clockMarks()}
                 </div>
-                <div class="hand seconds ${normalizeString(local)}"></div>
-                <div class="hand minutes ${normalizeString(local)}"></div>
-                <div class="hand hour ${normalizeString(local)}"></div>
-    
-                ${clockNums()}
-    
-                ${clockMarks()}
-            </div>
-            
-            <div class="digitalClock">
-                <span id="hours${normalizeString(local)}">00</span>
-                <span>:</span>
-                <span id="minutes${normalizeString(local)}">00</span>
-                <span>:</span>
-                <span id="seconds${normalizeString(local)}">00</span>
-                <span id="session${normalizeString(local)}">AM</span>
-            </div>
-        </div>`
+            </div>`
         );
     });    
 }

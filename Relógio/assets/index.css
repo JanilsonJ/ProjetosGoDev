@@ -47,23 +47,49 @@ body {
     box-shadow: 10px 5px 25px 0px #000000;
 }
 
-.localizacao {
+.insideClock {
     position: absolute;
+    z-index: 20;
 
     width: 100%;
     height: 100%;
 
-    color: #353535;
-    font-size: 1.5rem;
-    font-weight: bold;
-
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.localizacao > h2 {
-    margin-top: 70px;
+.insideClock > h2 {
+    color: #353535;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    margin-bottom: 70px;
+}
+
+/* Relógio Digital */
+
+.digitalClock {
+    font-family: 'Zen Dots', cursive;
+    font-weight: bold;
+    
+    color: #000000;
+    text-shadow: 0px 0px 10px #698b99;
+}
+
+.digitalClock:hover{
+    position: absolute;
+
+    background-color: #d9d9d9be;
+    
+    font-size: 3rem;
+    white-space: nowrap;
+
+    padding: 15px;
+    box-sizing: border-box;
+
+    border-radius: 15px;
 }
 
 .clock .number {
@@ -448,26 +474,4 @@ body {
 
 .clock .marcadores.marcadores-60{
     --rotation: 360deg;
-}
-
-/* Relógio Digital */
-
-.digitalClock {
-    font-family: 'Zen Dots', cursive;
-    
-    margin-top: 10px;
-    width: 50%;
-    
-    background-color: #0f0b0e;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-    color: #bf1212;
-    text-shadow: 0px 0px 10px #bf1212;
-
-    border-radius: 5px;
-
-    display: flex;
-    justify-content: center;
-
-    padding: 5px;
-    box-sizing: border-box;
 }
