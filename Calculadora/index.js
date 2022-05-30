@@ -22,6 +22,7 @@ class Calculator {
         if(isNaN(previusOperandFloat) || isNaN(currentOperandFloat))
             return;
         
+        this.operation = this.operation.replace("÷", "/");
         result = eval(`${previusOperandFloat} ${this.operation} ${currentOperandFloat}`);
         
         this.currentOperand = parseFloat(result);
