@@ -6,6 +6,7 @@ const allClearButton = document.querySelector("[data-all-clear]");
 const previousOperandTextElement = document.querySelector("[data-previous-operand]");
 const currentOperandTextElement = document.querySelector("[data-current-operand]");
 
+calculos = new Array();
 class Calculator {
     constructor(previousOperandTextElement,currentOperandTextElement){
         this.previousOperandTextElement = previousOperandTextElement;
@@ -22,9 +23,13 @@ class Calculator {
         if(isNaN(previusOperandFloat) || isNaN(currentOperandFloat))
             return;
         
-        this.operation = this.operation.replace("÷", "/");
-        result = eval(`${previusOperandFloat} ${this.operation} ${currentOperandFloat}`);
+        let calculo = `${previusOperandFloat} ${this.operation} ${currentOperandFloat}`;
+
+        calculo = calculo.replace("÷", "/");
+        result = eval(calculo);
         
+        calculos.push(`${calculo} = ${result}`); //Para o historico
+
         this.currentOperand = parseFloat(result);
         this.operation = undefined;
         this.previousOperand = "";
@@ -35,8 +40,12 @@ class Calculator {
             return;
 
         if (operation == "x²"){
-            if (this.currentOperand != "" && this.previousOperand == "")
+            
+            if (this.currentOperand != "" && this.previousOperand == ""){
+                calculos.push(`${this.currentOperand}² = ${Math.pow(this.currentOperand, 2)}`); //Para o historico
                 this.currentOperand = Math.pow(this.currentOperand, 2);
+            }
+            
             return;
         }
 
@@ -97,6 +106,15 @@ class Calculator {
         this.previousOperandTextElement.innerText = `${this.previousOperand} ${this.operation || ""}`;
         this.currentOperandTextElement.innerText = this.formatDisplayNumber(this.currentOperand);
     }
+
+    updateHistorico(){
+        $(document).ready(function() {
+            $('.calculos').empty();
+            calculos.forEach(calculo => {
+                $('.calculos').append(`<p class="calculo">${calculo}</p>`)
+            });
+        })
+    }
 }
 
 const calculator = new Calculator(
@@ -115,6 +133,7 @@ for (const operationButton of operationButtons){
     operationButton.addEventListener('click', () => {
         calculator.chooseOperation(operationButton.innerText);
         calculator.updateDisplay();
+        calculator.updateHistorico();
     })
 }
 
@@ -126,6 +145,7 @@ allClearButton.addEventListener('click', () => {
 equalsButton.addEventListener('click', () => {
     calculator.calculate();
     calculator.updateDisplay();
+    calculator.updateHistorico();
 })
 
 deleteButton.addEventListener('click', () => {
@@ -152,3 +172,4 @@ document.addEventListener('keydown', key => {
 
     calculator.updateDisplay()
 })
+

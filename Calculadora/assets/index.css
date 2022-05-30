@@ -6,6 +6,8 @@
 
 /* Body */
 body {
+    width: 100%;
+
     background-color: #16161a;
     background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
 
@@ -22,12 +24,22 @@ body {
     align-items: center;
 
     color: #fcfcfc;
+    text-align: center;
+
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* Calculadora */
 
 .calculadora {
     margin-bottom: 15px;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .grid-container {
@@ -36,11 +48,11 @@ body {
     align-content: center;
     grid-gap: 4px 4px;
 
-    height: 640px;
-    width: 420px;
+    height: 540px;
+    width: 340px;
 
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 80px);
 
     background-color: #474747;
     background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
@@ -55,7 +67,7 @@ body {
 .grid-container > button {
     cursor: pointer;
 
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     
     background-color: #232323;
     color: #fcfcfc;
@@ -67,7 +79,7 @@ body {
 }
 
 .grid-container > button:hover {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 
     text-shadow: 4px 4px 4px #a9a5a3;
     border-style: inset;
@@ -99,10 +111,9 @@ body {
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-around;
-
     
-    padding-right: 15px;
-    margin-bottom: 1vh;
+    padding: 15px;
+    margin-bottom: 15px;
 
     border: 8px solid #695e5e;
     border-style: inset;
@@ -119,5 +130,48 @@ body {
 .grid-container > .output > .current-operand {
     color: #16161a;
     font-size: 1.5rem;
+}
+
+/* Histórico */
+
+.historico {
+    max-height: 540px;
+    width: 400px;
+    
+    font-family: 'Indie Flower', cursive;
+    font-size: larger;
+    color: #cecece;
+
+    background-image: url("./schoolBoard");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+
+    border-radius: 1px;
+    border: 3px solid rgb(164, 88, 62);
+    border-style: outset;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    overflow: auto;
+}
+
+.historico > h3{
+    position: relative;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.historico > .calculos > p {
+    padding: 10px;
+    box-sizing: border-box;
+
+    text-align: center;
 }
 
